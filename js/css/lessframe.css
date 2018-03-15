@@ -1,0 +1,1395 @@
+/*	Less Framework 4
+	http://lessframework.com
+	by Joni Korpi
+	License: http://opensource.org/licenses/mit-license.php	*/
+
+
+/*	Resets
+	------	*/
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, hr, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figure, figcaption, hgroup, menu, footer, header, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	line-height: normal;
+}
+article, aside, canvas, figure, figure img, figcaption, hgroup, footer, header, nav, section, audio, video {
+	display: block;
+}
+fieldset, img {
+	border: 0;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+	font-style: normal;
+	font-weight: normal;
+}
+li {
+	list-style: none;
+}
+caption, th {
+	text-align: left;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+q:before, q:after {
+	content: '';
+}
+abbr, acronym {
+	border: 0;
+	font-variant: normal;
+}
+sup {
+	vertical-align: text-top;
+}
+sub {
+	vertical-align: text-bottom;
+	overflow: hidden;
+}
+input, textarea, select {
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	resize: none;
+	outline: none;
+}
+legend {
+	color: #000;
+}
+table {
+	font-size: inherit;
+}
+pre, code, kbd, samp, tt {
+	font-family: monospace;
+	line-height: 100%;
+}
+em {
+	font-style: italic;
+}
+strong {
+	font-weight: bold;
+}
+html {
+	-webkit-text-size-adjust: auto; /* Automatically adjusted for Safari on iPhone. */
+	-ms-text-size-adjust: auto;
+	font-family: Arial, Helvetica, sans-serif;
+}
+a {
+	text-decoration: none;
+	transition-property: all;
+	transition-duration: 0.8s;
+	transition-delay: 0s;
+	transition-easing: ease-out;
+	-moz-transition-property: all;
+	-moz-transition-duration: 0.8s;
+	-moz-transition-delay: 0s;
+	-moz-transition-easing: ease-out;
+	-webkit-transition-property: all;
+	-webkit-transition-duration: 0.8s;
+	-webkit-transition-delay: 0s;
+	-webkit-transition-easing: ease-out;
+	-o-transition-property: all;
+	-o-transition-duration: 0.8s;
+	-o-transition-delay: 0s;
+	-o-transition-easing: ease-out;
+	-ms-transition-property: all;
+	-ms-transition-duration: 0.8s;
+	-ms-transition-delay: 0s;
+	-ms-transition-easing: ease-out;
+}
+a:hover {
+	text-decoration: none;
+	transition-property: all;
+	transition-duration: 0.8s;
+	transition-delay: 0s;
+	transition-easing: ease-out;
+	-moz-transition-property: all;
+	-moz-transition-duration: 0.8s;
+	-moz-transition-delay: 0s;
+	-moz-transition-easing: ease-out;
+	-webkit-transition-property: all;
+	-webkit-transition-duration: 0.8s;
+	-webkit-transition-delay: 0s;
+	-webkit-transition-easing: ease-out;
+	-o-transition-property: all;
+	-o-transition-duration: 0.8s;
+	-o-transition-delay: 0s;
+	-o-transition-easing: ease-out;
+	-ms-transition-property: all;
+	-ms-transition-duration: 0.8s;
+	-ms-transition-delay: 0s;
+	-ms-transition-easing: ease-out;
+}
+:focus {
+	outline: 0;
+}
+.clearfix {
+	clear: both;
+}
+.clearfix:before, .clearfix:after {
+	content: "";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+.gap {
+	height: 15px;
+	clear: both;
+}
+.fr {
+	float: right;
+}
+.fl {
+	float: left;
+}
+.noBorder {
+	border-width: 0;
+}
+.noBorderTop {
+	border-top-width: 0;
+}
+.noBorderRight {
+	border-right-width: 0;
+}
+.noBorderBottom {
+	border-bottom-width: 0;
+}
+.noBorderLeft {
+	border-left-width: 0;
+}
+.noMargin {
+	margin: 0;
+}
+.noMarginTop {
+	margin-top: 0;
+}
+.noMarginRight {
+	margin-right: 0;
+}
+.noMarginBottom {
+	margin-bottom: 0;
+}
+.noMarginLeft {
+	margin-left: 0;
+}
+.noBackground {
+	background: none;
+}
+body {
+}
+.small, small {
+	font-size: 13px;
+	line-height: 18px;
+}
+/* Selection colours (easy to forget) */
+
+::selection {
+	background: #58b7e3;
+	color: #fff;
+}
+::-moz-selection {
+background: #58b7e3;
+color:#fff;
+}
+img::selection {
+	background: transparent;
+}
+img::-moz-selection {
+background: transparent;
+}
+body {
+	-webkit-tap-highlight-color: rgb(255,255,158);
+}
+/*		Default Layout: 992px. 
+		Gutters: 24px.
+		Outer margins: 48px.
+		Leftover space for scrollbars @1024px: 32px.
+-------------------------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8      9      10
+px      68    160    252    344    436    528    620    712    804    896    */
+
+body {
+	padding: 0px;
+	-webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
+}
+.container {
+	width: 1013px;
+	margin: 0 auto;
+}
+
+/*		Tablet Layout: 768px.
+		Gutters: 24px.
+		Outer margins: 28px.
+		Inherits styles from: Default Layout.
+-----------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8
+px      68    160    252    344    436    528    620    712    */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+body {
+}
+.container {
+	width: 750px;
+	margin: 0 auto;
+}
+.nav-collapse a {
+	margin: 18px 0 0;
+	padding: 0 7px;
+	font-size: 14px;
+}
+.slide-text {
+	left: 0;
+	top: 3px;
+}
+.slide-text {
+	left: 0;
+	top: 3px;
+}
+.slide-text h1 {
+	font-size: 36px;
+}
+.serv-cont {
+	float: left;
+	width: 100%;
+}
+.mack-post {
+	margin: 0;
+	width: 185px;
+}
+.sb-border {
+	margin: 17px -62px 0;
+	width: 192px;
+}
+.Boxycoin {
+	width: 100%;
+}
+.join-panl {
+	width: 100%;
+}
+.join-panl {
+	width: 100%;
+}
+.about-serv {
+	margin: 0 auto;
+	width: 100%;
+}
+.about-border2 > img {
+	width: 232px;
+}
+.about-border2 {
+	margin: 19px 0 0 -50px;
+}
+.pow {
+	width: 172px;
+}
+.about-border > img {
+	width: 235px;
+}
+.about-border {
+	margin: 19px 0 0 -51px;
+}
+.mac-serv {
+	width: auto;
+}
+.span12 {
+	width: 500px;
+}
+.owl-carousel .owl-item {
+	margin: 0 0 0 56px;
+	width: 167px !important;
+}
+.businnes {
+	width: 100%;
+}
+.pools-colam {
+	margin: 0 7px 0 0;
+	width: 234px;
+}
+.pools-colam li a {
+	font-size: 18px;
+	margin: 0 0 10px;
+}
+.join-web a {
+	margin: 0 14px;
+}
+.join-web img {
+	width: 354px;
+}
+.featured li {
+	margin: 0 8px 0 0;
+}
+.featured img {
+	width: 175px;
+}
+.team-row {
+	width: 100%;
+}
+.team-colam {
+	margin: 0 50px 0 0;
+}
+.blog-left {
+	float: left;
+	width: 96%;
+}
+.contat-arya {
+	width: 556px;
+}
+#blog {
+}
+.banner img {
+	height: 400px;
+	width: 100%;
+}
+.slide-text {
+	top: 64px;
+	width: 100%;
+}
+.nav-collapse a {
+	font-size: 13px;
+	padding: 8px;
+}
+.blog-titel {
+	padding: 0 0 28px;
+}
+.resnt-post {
+	margin: 0 4px 25px;
+	min-height: 224px;
+	float: left;
+	width: 367px;
+}
+.blog-right {
+	float: left;
+	width: 100%;
+}
+.n-fact {
+	width: 100%;
+}
+.miner {
+	float: none;
+	margin: 44px auto;
+	width: 579px;
+}
+.miner.panal .miner-left {
+	margin: 59px 0 0;
+}
+.miner.panal {
+	float: none;
+	margin: 0 auto;
+	width: 579px;
+}
+.border-fact > img {
+	width: 58%;
+}
+.nafact {
+	width: 250px;
+}
+.boxycoin-paper-print {
+	float: none;
+	margin: 0 auto;
+	width: 500px;
+}
+.miner-right {
+	float: left;
+	left: 0;
+	text-align: center;
+	top: 30px;
+	width: 100%;
+}
+.Boxycoin-paper > span {
+	float: left;
+	margin: 0 0 101px;
+	width: 100%;
+}
+.Boxy-paper-book {
+	text-align: center;
+	width: 100%;
+}
+.Boxycoin-block-text {
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	text-align: center;
+}
+.block-pc {
+	float: none;
+	margin: 0 auto;
+	width: 355px;
+}
+}
+ @media only screen and (min-width:600px) and (max-width:767px) {
+body {
+}
+.container {
+	width: 582px;
+	margin: 0 auto;
+}
+.nav {
+	background: #333333 none repeat scroll 0 0;
+	left: 0;
+	position: absolute;
+	top: 70px;
+}
+.toggleMenu {
+	color: #3e9745 !important;
+	font-size: 36px;
+	position: relative;
+	border: none !important;
+	right: -29px;
+	top: 32px;
+}
+.nav-collapse li {
+	float: none;
+}
+.banner img {
+	height: 400px;
+	width: 100%;
+}
+.nav-collapse a {
+	border-top: 1px solid #ffffff;
+	padding: 16px 41px;
+	color: #fff;
+	text-align: left;
+	float: left;
+	width: 100%;
+}
+.slide-text {
+	background: url(../images/form-bg.png);
+}
+.banner {
+}
+.sign-up {
+	padding: 13px 17px 23px;
+	width: 80%;
+}
+.slide-text h2 {
+	font-size: 22px;
+}
+.slide-text h1 {
+	font-size: 24px;
+}
+.btn input {
+	padding: 9px 31px;
+}
+.slide-text {
+	left: 0;
+	padding: 45px 0 0;
+	top: 41px;
+	width: 100%;
+}
+.Boxycoin-logo li img {
+	height: 100%;
+	width: 46%;
+}
+.about-serv {
+	width: 100%;
+}
+.ludwig-container {
+	width: 100%;
+}
+.table1-box {
+	width: 100%;
+}
+.table1-box.xm {
+	width: 100%;
+}
+.mac-serv {
+	width: 100%;
+}
+.businnes {
+	width: 100%;
+}
+.span12 {
+	width: 90%;
+}
+.owl-carousel .owl-item {
+	margin: 0 20px 0 0;
+}
+.btn.prev {
+	left: 0;
+}
+.btn.next {
+	right: 0;
+}
+.Boxycoin {
+	width: 100%;
+}
+.join-panl {
+	width: 86%;
+}
+.join-panl img {
+	text-align: center;
+	width: auto;
+}
+.join-web a {
+	float: left;
+	margin: 0 0 16px;
+	width: 100%;
+}
+.join-web {
+	width: 100%;
+	text-align: center;
+}
+.Boxycoin-paper-print {
+	width: 100%;
+}
+.miner-left {
+	width: 100%;
+}
+.miner.panal .miner-left {
+	width: 100%;
+}
+.miner-right > img {
+	width: 100%;
+}
+.n-fact {
+	width: 100%;
+}
+.team-row {
+	width: 100%;
+}
+.blog-left {
+	width: 100%;
+}
+.contat-arya {
+	width: 100%;
+}
+.ludwig-diec {
+	width: 414px;
+}
+.blog-right {
+	width: 100%;
+}
+.mark {
+	display: none;
+}
+.spam {
+	display: none;
+}
+.block-pc {
+	text-align: center;
+	width: 100%;
+}
+.block-pc img {
+	width: auto;
+}
+.border-fact {
+	display: none;
+}
+.miner-right {
+	top: 20px;
+	left: 0;
+}
+.miner-left.row li {
+	margin: 0 8px;
+	width: auto;
+}
+.pools {
+	width: 100%;
+}
+.pools-colam {
+	margin: 0 0 24px;
+	width: 100%;
+}
+.pools-colam {
+	margin: 0 0 24px;
+	width: 100%;
+}
+#join {
+	padding: 41px 0;
+}
+.post-colam {
+	width: auto;
+}
+.n-fact-table th {
+	padding: 7px 8px;
+	font-size: 12px;
+}
+.n-fact-table td {
+	padding: 8px 17px;
+}
+.table1-box.xm .table1-box-xl {
+	width: 433px;
+}
+.table1-box-xm {
+	width: 344px;
+}
+.table1-box.xm {
+	margin: 20px 0 0;
+	width: 100%;
+}
+.about-border {
+	display: none;
+}
+.about-border2 {
+	display: none;
+}
+.pow.two {
+	margin: 0;
+}
+.pow.three {
+	margin: 0;
+}
+.pow {
+	width: 194px;
+}
+.pow h6 {
+	font-size: 16px;
+}
+.mack-post {
+	margin: 0 0 36px;
+	width: 48%;
+}
+.sb-border.show {
+	display: none;
+	margin: 0;
+}
+.sb-border {
+	display: none;
+	margin: 0;
+}
+.businnes-colam {
+	display: list-item;
+}
+.businnes {
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+}
+.businnes li {
+	margin: 0 0 25px 0;
+	width: 194px;
+}
+.Boxycoin-logo li {
+	width: 191px;
+}
+.featured {
+	display: none;
+}
+.Boxy-paper-book {
+	float: left;
+}
+.Boxy-paper-book img {
+	width: 100%;
+}
+.step-text {
+	height: 153px;
+	width: 108px;
+	margin: 0 18px;
+}
+.Boxycoin-block-text {
+	margin: 0;
+}
+.miner-cb {
+	display: none;
+	margin: 0;
+}
+.miner-left li {
+	width: 145px;
+}
+.team-colam {
+	margin: 0 0 16px;
+}
+.footer-nav li {
+	margin: 0 3px;
+}
+.nafact {
+	width: 194px;
+}
+.miner-dowl {
+	float: none;
+	margin: 0 0 21px;
+	text-align: center;
+}
+.form-news > input {
+	padding: 9px;
+	width: 136px;
+}
+.miner-right {
+	text-align: center;
+	width: 100%;
+}
+.miner-right img {
+	width: auto;
+}
+.contat-arya {
+	width: 71%;
+}
+}
+
+/*		Wide Mobile Layout: 480px.
+		Gutters: 24px.
+		Outer margins: 22px.
+		Inherits styles from: Default Layout, Mobile Layout.
+------------------------------------------------------------
+cols    1     2      3      4      5
+px      68    160    252    344    436    */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+body {
+}
+.container {
+	width: 300px;
+	margin: 0 auto;
+}
+#header {
+	height: auto;
+}
+.nav-collapse, .nav-collapse ul {
+	margin: 0 36px 0 0;
+}
+.banner {
+	top: 75px;
+}
+.nav {
+	background: #333333;
+	left: 0;
+	position: absolute;
+	top: 70px;
+}
+#about-section {
+	margin: 74px 0 0;
+}
+.about h1 {
+	font-size: 31px;
+}
+.about p {
+	padding: 9px 0;
+}
+.toggleMenu {
+	border: medium none !important;
+}
+.toggleMenu {
+	font-size: 36px;
+	color: #3E9745 !important;
+	position: relative;
+	right: -29px;
+	top: 30px;
+}
+.mission-top h1 {
+	font-size: 23px;
+}
+.mission-top p {
+	padding: 13px 0;
+}
+.slide {
+	margin: 43px 0 0 57px;
+}
+.btn.prev {
+	left: 3px;
+}
+.btn.next {
+	right: 10px;
+}
+.Boxycoin h1 {
+	font-size: 24px;
+}
+#wallet {
+	padding: 31px 0 0;
+}
+.Boxycoin-paper h1 {
+	font-size: 27px;
+}
+.join-panl h1 {
+	font-size: 25px;
+	padding: 0 0 34px;
+}
+#join {
+}
+.pools-panal h1 {
+	font-size: 31px;
+}
+.payment {
+	padding: 30px 0;
+}
+.payment-panal h1 {
+	font-size: 26px;
+}
+.Boxycoin-logo {
+	float: none;
+	margin: 0 auto;
+	width: 300px;
+}
+.Boxycoin h1 {
+	font-size: 21px;
+}
+.sign-up {
+	width: 80%;
+	padding: 12px 20px;
+}
+.slide-text h2 {
+	font-size: 22px;
+}
+.slide-text h1 {
+	font-size: 24px;
+}
+.banner img {
+	height: 487px;
+	width: 100%;
+}
+.slide-text p {
+	font-size: 13px;
+	line-height: 19px;
+}
+.slide-text {
+	left: 0;
+	padding: 19px 0;
+	background: url(../images/form-bg.png);
+	top: 0;
+	width: 100%;
+}
+.about-serv {
+	width: 100%;
+}
+.ludwig-container {
+	width: 100%;
+}
+.table1-box {
+	width: 100%;
+}
+.table1-box.xm {
+	width: 100%;
+}
+.mac-serv {
+	width: 100%;
+}
+.businnes {
+	width: 100%;
+}
+.span12 {
+	width: 100%;
+}
+.Boxycoin {
+	width: 100%;
+}
+.join-panl {
+	width: 86%;
+}
+.join-panl img {
+	width: 100%;
+}
+.Boxycoin-paper-print {
+	width: 100%;
+}
+.miner-left {
+	width: 100%;
+}
+.miner.panal .miner-left {
+	width: 100%;
+}
+.n-fact {
+	width: 100%;
+}
+.team-row {
+	width: 100%;
+}
+.blog-left {
+	width: 100%;
+}
+.contat-arya {
+	width: 100%;
+}
+.ludwig-diec {
+	width: 100%;
+}
+.blog-right {
+	width: 100%;
+}
+.table1-box-xm {
+	width: 94%;
+}
+.table1-box-xl {
+	width: 94%;
+}
+.mark {
+	display: none;
+}
+.spam {
+	display: none;
+}
+.block-pc {
+	width: 100%;
+}
+.block-pc img {
+	width: 100%;
+}
+.border-fact {
+	display: none;
+}
+.miner-right {
+	left: 0;
+	text-align: center;
+	top: 20px;
+	width: 100%;
+}
+.miner.panal {
+	margin: 61px 0 0;
+}
+.miner-right > img {
+	width: 100%;
+}
+.blog-titel {
+	font-size: 24px;
+	padding: 0 0 27px;
+}
+.titel-post {
+	float: left;
+	width: 213px;
+}
+.titel-post a {
+	font-size: 16px;
+}
+.miner-left.row li {
+	margin: 0 8px;
+	width: auto;
+}
+.pools {
+	width: 100%;
+}
+.pools-colam {
+	margin: 0 0 30px;
+	width: 100%;
+}
+.join-web a {
+	float: left;
+	margin: 0 0 18px;
+}
+.post-colam {
+	width: auto;
+}
+.n-fact-table th {
+	padding: 7px 8px;
+	font-size: 12px;
+}
+.n-fact-table td {
+	padding: 8px 17px;
+}
+.table1-box.xm .table1-box-xl {
+	width: 94%;
+}
+.table1-box.xm .table1-box-xm {
+	width: 94%;
+}
+.about-border {
+	display: none;
+}
+.about-border2 {
+	display: none;
+}
+.pow.two {
+	margin: 0;
+}
+.pow.three {
+	margin: 0;
+}
+.pow {
+	width: 100%;
+}
+.mack-post {
+	margin: 0 0 35px;
+	width: 100%;
+}
+.sb-border.show {
+	display: none;
+	margin: 0;
+}
+.sb-border {
+	display: none;
+	margin: 0;
+}
+.businnes-colam {
+	display: list-item;
+}
+.businnes {
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+}
+.businnes li {
+	margin: 0 0 25px 0;
+	float: none;
+}
+.Boxycoin-block-text h2 {
+	font-size: 24px;
+}
+.Boxycoin-logo li {
+	width: 147px;
+}
+.featured {
+	display: none;
+}
+.Boxy-paper-book {
+	float: left;
+}
+.Boxy-paper-book img {
+	width: 100%;
+}
+.step-text {
+	height: 153px;
+	margin: 0 30px;
+}
+.Boxycoin-block-text {
+	margin: 0;
+}
+.miner-cb {
+	display: none;
+	margin: 0;
+}
+.miner-left li {
+	width: 139px;
+}
+.team-colam {
+	margin: 0 0 16px;
+}
+.miner-dowl {
+	float: none;
+	margin: 0 0 21px;
+	text-align: center;
+}
+.form-news {
+	float: none;
+}
+.form-news > input {
+	padding: 7px;
+	margin: 0 0 9px;
+	width: 97%;
+}
+.footer-nav li {
+	margin: 0 8px 7px;
+}
+.Boxycoin-logo img {
+	width: 131px;
+}
+.nfact-serv {
+	text-align: center;
+}
+.nafact {
+	float: left;
+	width: 100px;
+}
+.nafact h2 {
+	font-size: 14px;
+}
+.tham-mail {
+	margin: 0 0 8px;
+}
+.Boxycoin-logo li a {
+	font-size: 18px;
+}
+.connect-titel h3 {
+	font-size: 26px;
+}
+.nav-collapse a {
+	border-top: 1px solid white;
+	float: left;
+	color: #fff;
+	width: 100%;
+}
+#top-menu a {
+	font-size: 15px;
+	padding: 8px 16px 8px 17px;
+}
+}
+
+/*		Wide Mobile Layout: 480px.
+		Gutters: 24px.
+		Outer margins: 22px.
+		Inherits styles from: Default Layout, Mobile Layout.
+------------------------------------------------------------
+cols    1     2      3      4      5
+px      68    160    252    344    436    */
+
+@media only screen and (min-width: 480px) and (max-width: 599px) {
+body {
+}
+.container {
+	width: 460px;
+	margin: 0 auto;
+}
+#header {
+	height: auto;
+}
+.nav-collapse, .nav-collapse ul {
+	margin: 0 36px 0 0;
+}
+.banner {
+}
+.sign-up {
+	width: 80%;
+}
+.slide-text h2 {
+	font-size: 22px;
+}
+.slide-text h1 {
+	font-size: 24px;
+}
+.banner img {
+	height: 511px;
+	width: 100%;
+}
+.slide-text {
+	left: 0;
+	padding: 48px 0 31px;
+	background: url(../images/form-bg.png);
+	top: 0;
+	width: 100%;
+}
+.about-serv {
+	width: 100%;
+}
+.ludwig-container {
+	width: 100%;
+}
+.table1-box {
+	width: 100%;
+}
+.table1-box.xm {
+	width: 100%;
+}
+.mac-serv {
+	width: 100%;
+}
+.businnes {
+	width: 100%;
+}
+.span12 {
+	width: 85%;
+}
+.Boxycoin {
+	width: 100%;
+}
+.join-panl {
+	width: 86%;
+}
+.join-panl img {
+	width: 100%;
+}
+.Boxycoin-paper-print {
+	width: 100%;
+	margin-top: 42px;
+}
+.miner-left {
+	width: 100%;
+}
+.miner.panal .miner-left {
+	width: 100%;
+}
+.miner-right > img {
+	width: 100%;
+}
+.n-fact {
+	width: 100%;
+}
+.team-row {
+	width: 100%;
+}
+.blog-left {
+	width: 100%;
+}
+.contat-arya {
+	width: 100%;
+}
+.ludwig-diec {
+	width: 100%;
+}
+.blog-right {
+	width: 100%;
+}
+.table1-box-xm {
+	width: 94%;
+}
+.table1-box-xl {
+	width: 94%;
+}
+.mark {
+	display: none;
+}
+.spam {
+	display: none;
+}
+.block-pc {
+	width: 100%;
+}
+.block-pc img {
+	width: 100%;
+}
+.border-fact {
+	display: none;
+}
+.miner-right {
+	top: 20px;
+	left: 0;
+}
+.miner-left.row li {
+	margin: 0 8px;
+	width: auto;
+}
+.pools {
+	width: 92%;
+}
+.pools-colam {
+	margin: 0;
+	width: 100%;
+}
+.join-web a {
+	float: left;
+	margin: 16px 0 0;
+}
+.post-colam {
+	width: auto;
+}
+.n-fact-table th {
+	padding: 7px 8px;
+	font-size: 12px;
+}
+.n-fact-table td {
+	padding: 8px 17px;
+}
+.table1-box.xm .table1-box-xl {
+	width: 94%;
+}
+.table1-box.xm .table1-box-xm {
+	width: 94%;
+}
+.about-border {
+	display: none;
+}
+.about-border2 {
+	display: none;
+}
+.pow.two {
+	margin: 0;
+}
+.pow.three {
+	margin: 0;
+}
+.pow {
+	width: 152px;
+}
+.pow h6 {
+	font-size: 16px;
+}
+.mack-post {
+	margin: 0 0 36px;
+	width: 100%;
+}
+.sb-border.show {
+	display: none;
+	margin: 0;
+}
+.sb-border {
+	display: none;
+	margin: 0;
+}
+.businnes-colam {
+	display: list-item;
+}
+.businnes {
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+}
+.businnes li {
+	margin: 0 0 25px 0;
+	float: left;
+	width: 153px;
+}
+.Boxycoin-logo li {
+	width: 100%;
+}
+.featured {
+	display: none;
+}
+.Boxy-paper-book {
+	float: left;
+}
+.Boxy-paper-book img {
+	width: 100%;
+}
+.step-text {
+	height: 153px;
+	margin: 0 12px;
+}
+.Boxycoin-block-text {
+	margin: 0;
+}
+.miner-cb {
+	display: none;
+	margin: 0;
+}
+.miner-left li {
+	width: 115px;
+}
+.team-colam {
+	margin: 0 0 16px;
+}
+.footer-nav li {
+	margin: 0 3px;
+}
+.nafact {
+	width: 147px;
+}
+.miner-dowl {
+	float: none;
+	margin: 0 0 21px;
+	text-align: center;
+}
+.form-news {
+	float: none;
+}
+.form-news > input {
+	padding: 7px;
+	margin: 0 0 9px;
+	width: 97%;
+}
+.miner-right {
+	text-align: center;
+	width: 100%;
+}
+.miner-right img {
+	width: auto;
+}
+.contat-arya {
+	width: 64%;
+}
+.nav-collapse a {
+	border-top: 1px solid white;
+	float: left;
+	color: #fff;
+	width: 100%;
+}
+.nav {
+	background: #333333;
+	left: 0;
+	position: absolute;
+	top: 75px;
+}
+.toggleMenu {
+	color: #3e9745 !important;
+	font-size: 36px;
+	position: relative;
+	right: -29px;
+	top: 30px;
+}
+.toggleMenu {
+	border: medium none !important;
+}
+#join {
+	padding: 46px 0;
+}
+.join-panl h1 {
+	padding: 0 0 13px;
+}
+.owl-carousel .owl-item {
+	margin: 0 73px 0 0;
+}
+.btn.prev {
+	left: 0;
+}
+.btn.next {
+	right: 0;
+}
+#top-menu a {
+	font-size: 15px;
+	padding: 8px 16px 8px 17px;
+}
+}

@@ -1,0 +1,201 @@
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+configuration file is generated automatically .... the addnodes where added ... the masternodeprivkey was edited. That's it. On this server there are 20, we find that's a good number to start with ... I could have generated 100, but the multiple downloaded blockchains would use all the secondary storage.
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+addnode=202.91.33.100:21510
+addnode=121.63.252.178:21517
+addnode=140.82.8.194:21527
+addnode=202.91.33.100:21505
+addnode=121.63.252.178:21520
+addnode=90.156.157.28:21526
+addnode=137.74.173.114:21529
+addnode=202.91.33.100:21501
+addnode=137.74.173.114:21530
+addnode=202.91.33.100:21508
+addnode=86.101.84.223:21527
+addnode=137.74.173.114:21531
+addnode=137.74.173.114:21528
+addnode=121.63.252.178:21512
+addnode=54.37.72.144:21529
+addnode=202.91.33.100:21502
+addnode=167.99.164.67:21527
+addnode=217.182.71.85:21527
+addnode=121.63.252.178:21514
+addnode=54.37.72.144:21530
+
+################################
+################################
+# basic settings
+################################
+txindex=1
+logtimestamps=1
+listen=1
+daemon=1
+gen=0
+maxconnections=256
+bind=[2001:19f0:ac01:16c8:1959::1]:21527
+
+#############################
+# nodes we want to stick to
+#############################
+# addnode=seed1.xxx.org
+
+################################
+# masternode specific settings
+################################
+masternode=1
+#### INSERT YOUR MASTERNODE PRIVATEKEY BELOW ####################################################
+masternodeprivkey=64iBPofAD9rxJXdPDgBkPhH3bdEifE2xS5eUc5ZkEuFPEdxw2Xm
+#################################################################################################
+#
+#                        b.
+#                        88b           Insert your generated masternode privkey here
+#                        888b.
+#                        88888b
+#                        888888b.
+#                        8888P"
+#                        P" `8.
+#                            `8.
+#                             `8
+#################################################################################################
+
+#############################
+# optional indices
+#############################
+addressindex=1
+timestampindex=1
+spentindex=1
+
+#############################
+# JSONRPC
+#############################
+server=1
+rpcuser=artaxrpc
+rpcpassword=971041926a673d443b67cec6
+rpcallowip=127.0.0.1
+rpcport=5551
+
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+Next we see the four(4) masternodes operational and happy on a single VPS ... there are actually 20 on this VPS, but storage as in hard drive space would need to purchased separately.
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+root@guest:/etc/masternodes# /usr/local/bin/artax-cli -conf=/etc/masternodes/artax_n1.conf getinfo ; /usr/local/bin/artax-cli -conf=/etc/masternodes/artax_n1.conf masternode status ;
+{
+  "version": 1000001,
+  "protocolversion": 70912,
+  "walletversion": 61000,
+  "balance": 0.00000000,
+  "blocks": 66573,
+  "timeoffset": 0,
+  "connections": 16,
+  "proxy": "",
+  "difficulty": 5957.834711041875,
+  "testnet": false,
+  "moneysupply": 5459052.26379886,
+  "keypoololdest": 1526006415,
+  "keypoolsize": 1001,
+  "paytxfee": 0.00000000,
+  "relayfee": 0.00010000,
+  "staking status": "Staking Not Active",
+  "errors": ""
+}
+{
+  "txhash": "d3dd6cb771ccd78f205f1a0c2d19512cc716fc5c2d7504639b4c92c18f1f83eb",
+  "outputidx": 0,
+  "netaddr": "[2001:19f0:ac01:16c8:1959::1]:21527",
+  "addr": "AXi1mAf8AmpKXGMot8xbE6pdQvzjV9UWJB",
+  "status": 4,
+  "message": "Masternode successfully started"
+}
+root@guest:/etc/masternodes#
+root@guest:/etc/masternodes# /usr/local/bin/artax-cli -conf=/etc/masternodes/artax_n2.conf getinfo && /usr/local/bin/artax-cli -conf=/etc/masternodes/artax_n2.conf masternode status ;
+{
+  "version": 1000001,
+  "protocolversion": 70912,
+  "walletversion": 61000,
+  "balance": 0.00000000,
+  "blocks": 66573,
+  "timeoffset": 0,
+  "connections": 16,
+  "proxy": "",
+  "difficulty": 5957.834711041875,
+  "testnet": false,
+  "moneysupply": 5459052.26379886,
+  "keypoololdest": 1526006416,
+  "keypoolsize": 1001,
+  "paytxfee": 0.00000000,
+  "relayfee": 0.00010000,
+  "staking status": "Staking Not Active",
+  "errors": ""
+}
+{
+  "txhash": "c11896312c106c8fa27f6157ca9ce9af0960a4f7d88c7fa0241c49569899511a",
+  "outputidx": 1,
+  "netaddr": "[2001:19f0:ac01:16c8:1959::2]:21527",
+  "addr": "AGqkCFvJtFyV19DAnm2UX17kPuude8pgAA",
+  "status": 4,
+  "message": "Masternode successfully started"
+}
+root@guest:/etc/masternodes#
+root@guest:/etc/masternodes# /usr/local/bin/artax-cli -conf=/etc/masternodes/artax_n3.conf getinfo && /usr/local/bin/artax-cli -conf=/etc/masternodes/artax_n3.conf masternode status ;
+{
+  "version": 1000001,
+  "protocolversion": 70912,
+  "walletversion": 61000,
+  "balance": 0.00000000,
+  "blocks": 66573,
+  "timeoffset": 0,
+  "connections": 16,
+  "proxy": "",
+  "difficulty": 5957.834711041875,
+  "testnet": false,
+  "moneysupply": 5459052.26379886,
+  "keypoololdest": 1526006416,
+  "keypoolsize": 1001,
+  "paytxfee": 0.00000000,
+  "relayfee": 0.00010000,
+  "staking status": "Staking Not Active",
+  "errors": ""
+}
+{
+  "txhash": "5f2dfa36effffe0416f9fe628ba5afdd95a6609ff1dd5576d6d4453a7cc6195e",
+  "outputidx": 0,
+  "netaddr": "[2001:19f0:ac01:16c8:1959::3]:21527",
+  "addr": "AQXMMFeyBxjtMiPAZxMXh5oWpJKPrvX3ws",
+  "status": 4,
+  "message": "Masternode successfully started"
+}
+root@guest:/etc/masternodes#
+root@guest:/etc/masternodes# /usr/local/bin/artax-cli -conf=/etc/masternodes/artax_n4.conf getinfo && /usr/local/bin/artax-cli -conf=/etc/masternodes/artax_n4.conf masternode status ;
+{
+  "version": 1000001,
+  "protocolversion": 70912,
+  "walletversion": 61000,
+  "balance": 0.00000000,
+  "blocks": 66573,
+  "timeoffset": 0,
+  "connections": 16,
+  "proxy": "",
+  "difficulty": 5957.834711041875,
+  "testnet": false,
+  "moneysupply": 5459052.26379886,
+  "keypoololdest": 1526006416,
+  "keypoolsize": 1001,
+  "paytxfee": 0.00000000,
+  "relayfee": 0.00010000,
+  "staking status": "Staking Not Active",
+  "errors": ""
+}
+{
+  "txhash": "818b280d7405c6098ef89f0e99cab45b2d3081cc1e0282084cbb8dfced256f13",
+  "outputidx": 1,
+  "netaddr": "[2001:19f0:ac01:16c8:1959::4]:21527",
+  "addr": "AZrejxtwmeEh37u1KusNjLKWpmP3dej3dP",
+  "status": 4,
+  "message": "Masternode successfully started"
+}
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+See attached WORD document ...
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+
+
